@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    crossorigin="anonymous"
+  />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='itacademy.png') }}"  type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='it-academy-sz.png') }}"  type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='finance-course.webp') }}"  type="image/x-icon" />
+  </head>
+  <body style="background-color:#f2f2f2;font-size: 12pt;">
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="{{ url_for('static', filename='it-academy-sz.png') }}" alt="logo" width="390px"/>
+          </a>
+        </div>
+        <div class="main-menu">
+          <ul class="menu-item">
+            <li>
+                <a class="btn" href="/">Начална страница</a>
+            </li>
+            <li>
+                <a class="btn" href="index2" id="/index2" > Финансов Отчет</a>
+            </li>
+            <li>
+                <a class="btn" href="index3" id="/index3" > Манупулация Приходи</a>
+            </li>
+            <li>
+              <a class="btn" href="index4" id="/index4" > Манупулация Разходи</a>
+          </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>

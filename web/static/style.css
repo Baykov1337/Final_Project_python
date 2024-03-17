@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --primary-color: #377feb;
+    --light-color: #f4f4f6;
+    --dark-color: #111;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #fff;
+    overflow-x: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: #fff;
+    padding: 20px;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .main-menu ul {
+    display: flex;
+    padding: 0.25rem;
+  }
+  
+  .navbar ul li a {
+    padding: 20px 20px 20px;
+    display: block;
+    font-weight: 600;
+    transition: 0.5s;
+  }
+  
+  .navbar ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .navbar ul li a i {
+    margin-right: 10px 10px;
+  }
+  
+  .navbar ul li:last-child a {
+    margin-left: 10px 10px;
+  }
+  
+  /* main */
+  .main {
+    margin-bottom: 50px;
+  }
+  
+  .main .container {
+    background: url('finance-course.webp') no-repeat;
+    background-size:cover;
+    background-position: center bottom;
+    height: 650px;
+  }
+
+  .main .container1 {
+    background:  no-repeat;
+    background-size:cover;
+    background-position: center bottom;
+    height: 650px;
+  }
+  .main .container2 {
+    background: no-repeat;
+    background-size:cover;
+    background-position: center bottom;
+    height: 650px;
+  }
+  .main .main-content {
+    width: 70%;
+    
+  }
+  .main .main-text {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  
+  .main .main-text1 {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 40px 0;
+  }
+  
+  .footer h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li {
+    line-height: 3.5;
+  }
+  
+  .footer a {
+    color: #ccc;
+  }
+  
+  .footer i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  
+  .footer-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Utility Classes */
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+
+  /* Buttons */
+  .btn {
+    display:block;
+    padding: 13px 20px;
+    background: var(--light-color);
+    color: #333;
+    font-weight: 800;
+    text-decoration: none;
+    border: none;
+    border-radius: 115px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+  }
+  
+  
+  
+  /* Text Classes */
+  .text-xxl {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 40px 0 20px;
+  }
+  
+  .text-xl {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 40px 0 20px;
+  }
+  
+ 
+  
+  /* Background */
+  .bg-primary {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  
+  .bg-light {
+    background: var(--light-color);
+    color: #333;
+  }
+  
+  .bg-dark {
+    background: var(--dark-color);
+    color: #fff;
+  }
+  
+  .bg-black {
+    background: #000;
+    color: #fff;
+  }
+  
+  
+  
+  
+    /* Text */
+    .text-xl {
+      font-size: 1.9rem;
+    }
+  
+    .text-lg {
+      font-size: 1.5rem;
+    }
+  
+    .text-md {
+      font-size: 1.1rem;
+    }
+  
