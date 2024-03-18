@@ -1,7 +1,7 @@
 import panel as pn
 import pandas as pd
 from alchemy import  Views, Session
-
+from datetime import datetime
 
 session = Session.return_session()
 
@@ -42,6 +42,8 @@ class tabulator():
 
         @pn.depends(select_firstname.param.value, select_start_date.param.value, select_end_date.param.value)
         def update_table(selected_firstname, start_date, end_date):
+            if start_date is None: start_date= datetime.now()
+            if end_date is None: end_date= datetime.now()
             start_date = pd.to_datetime(start_date)
             end_date = pd.to_datetime(end_date)
                     

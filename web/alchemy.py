@@ -1,9 +1,8 @@
 
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime, Date
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime, Date, text
+from sqlalchemy.orm import sessionmaker, relationship, declarative_base
 from datetime import datetime
-
+from create_veiw import Create_VIEW
 DATABASE_URL = 'sqlite:///finance.db'
 
 # SQLAlchemy Setup
@@ -40,22 +39,6 @@ class Expenses(Base):
     source = Column(String) 
     date = Column(Date, default=datetime.now)
 
-class Views(Base):
-    __tablename__ = 'v_expenses_income'
-    
-    id = Column(Integer, primary_key=True)
-    FullName = Column(String)
-    description_expenses = Column(String)
-    expenses = Column(String)
-    source_expenses = Column(String)
-    date_expenses = Column(DateTime)
-    description_income = Column(String)
-    income = Column(String)
-    source_income = Column(String)
-    date_income = Column(String)
-
-
-
 class Session():
      def __init__(self, session):
         self.session = session
@@ -64,5 +47,19 @@ class Session():
      def return_session():
          Session = sessionmaker(bind=engine)
          session = Session()
+         session.execute(text(Create_VIEW.sql_query()))
          return session
+class Views(Base):
+    __tablename__ = 'v_expenses_income'
+    
+    id = Column(Integer, primary_key=True)
+    FullName = Column(String, default="")
+    description_expenses = Column(String, default="")
+    expenses = Column(String, default="")
+    source_expenses = Column(String, default="")
+    date_expenses = Column(DateTime, default=datetime.now)
+    description_income = Column(String, default="")
+    income = Column(String, default="")
+    source_income = Column(String, default="")
+    date_income = Column(String, default="")
 

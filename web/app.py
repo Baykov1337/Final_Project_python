@@ -11,7 +11,7 @@ cur = conn.cursor()
 session = Session.return_session()
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = 'super strong random key'
 app.config['SESSION_TYPE'] = 'filesystem'
 
