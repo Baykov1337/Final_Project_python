@@ -9,10 +9,8 @@ To start the project you will need to follow several steps:
 2. The database finances.db - could or could not exist.
    To fully experience the functionality of the project I suggest running /database/create_object.py to to fill with data.
 
-3. To runn the application just execute the app.py  - 
+3. To run the application just execute the app.py  - 
 it will start the app on http://127.0.0.1:5000
-
-app.py is main role how the app works.
 
 There are 2 users in the Database - Petar and Boyan. Id for Petar is 2 (you can see the Юзър ID )
 Id for Boyan is 1
@@ -28,7 +26,7 @@ Enjoy using the webpage I've created
 p.s.
 Stuff that obviously are missing or incomplete:)
 
-1. Login page - users table could contain the email and password for login didnt had the time to do that.  
+1. Login page - users table could contain the email and password for login.  
    We do not want other people to review our finance balance
 2. The "Insert Data" feature is not very user-friendly as it requires you to manually enter the user_id for a specific person. This can be a challenge if you have multiple users, but implementing a login system could solve that problem. In any case, you can find the "User ID" to identify the specific person
 3. Expenses and Income manipulation could benefit from a Month filter. Additionally, pagination of the data could avoid the need for scrolling down rows if there are too many.
