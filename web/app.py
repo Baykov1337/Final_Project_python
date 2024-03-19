@@ -41,18 +41,21 @@ def Index3():
             cur.execute("""SELECT i.id, i.user_id, u.FirstName, u.LastName, i.income, i.description, i.source, i.date   
                             FROM income i 
                             JOIN users u ON u.id = i.user_id
-                            WHERE u.FirstName || ' ' || u.LastName = ?""", (selected_user_name,))
+                            WHERE u.FirstName || ' ' || u.LastName = ?
+                        order by i.date desc""", (selected_user_name,))
         else:
             cur.execute("""SELECT i.id, i.user_id, u.FirstName, u.LastName, i.income, i.description, i.source, i.date   
                             FROM income i 
-                            JOIN users u ON u.id = i.user_id""")
+                            JOIN users u ON u.id = i.user_id 
+                        order by i.date desc""")
 
         income_data = cur.fetchall()
 
     else:
         cur.execute("""SELECT i.id, i.user_id, u.FirstName, u.LastName, i.income, i.description, i.source, i.date 
                         FROM income i 
-                        JOIN users u ON u.id = i.user_id""")
+                        JOIN users u ON u.id = i.user_id
+                    order by i.date desc""")
         income_data = cur.fetchall()
 
 
@@ -142,18 +145,21 @@ def index4():
             cur.execute("""SELECT i.id, i.user_id, u.FirstName, u.LastName, i.expenses, i.description, i.source, i.date   
                             FROM expenses i 
                             JOIN users u ON u.id = i.user_id
-                            WHERE u.FirstName || ' ' || u.LastName = ?""", (selected_user_name,))
+                            WHERE u.FirstName || ' ' || u.LastName = ?
+                        order by i.date desc""", (selected_user_name,))
         else:
             cur.execute("""SELECT i.id, i.user_id, u.FirstName, u.LastName, i.expenses, i.description, i.source, i.date   
                             FROM expenses i 
-                            JOIN users u ON u.id = i.user_id""")
+                            JOIN users u ON u.id = i.user_id
+                        order by i.date desc""")
 
         expenses_data = cur.fetchall()
 
     else:
         cur.execute("""SELECT i.id, i.user_id, u.FirstName, u.LastName, i.expenses, i.description, i.source, i.date 
                         FROM expenses i 
-                        JOIN users u ON u.id = i.user_id""")
+                        JOIN users u ON u.id = i.user_id
+                    order by i.date desc""")
         expenses_data = cur.fetchall()
 
 
