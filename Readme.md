@@ -5,7 +5,7 @@ To start the project you will need to follow several steps:
    Installing conda and config it is not part of the subject.
    To install the requirement packages you will need to do the following commands:
    conda env create -f FinalProject.yaml (with the full path if directory is different in terminal than the project path)
-
+    
 2. The database finances.db - could or could not exist.
    To fully experience the functionality of the project I suggest running /database/create_object.py to to fill with data.
 

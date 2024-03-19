@@ -11,12 +11,13 @@ class tabulator():
     def create_tabulator():
         pn.extension('tabulator')
 
-        df = pd.read_sql(session.query(Views).with_entities(Views.id, Views.FullName, Views.description_expenses, Views.expenses, Views.source_expenses, Views.date_expenses,
-                                                            Views.description_income, Views.income, Views.source_income, Views.date_income).statement, session.bind)
+        df = pd.read_sql(session.query(Views).with_entities(Views.id, Views.FullName, Views.Source_Expenses, Views.Expenses, Views.Description_Expenses, Views.Date_Expenses,
+                                                            Views.Description_Income, Views.Income, Views.Source_Income, Views.Date_Income).statement, session.bind)
 
         tabulator = pn.widgets.Tabulator(df, pagination='local', page_size=10)
         styles = {
         'background-color': '#F6F6F6', 'border': '1px solid black',
+        'background-position': 'center', 
         'border-radius': '15px', 'padding': '30px',
         'text-align': 'left',
         'align-items': 'center'
@@ -36,7 +37,7 @@ class tabulator():
         unique_firstname = df['FullName'].unique().tolist()
         select_firstname = pn.widgets.Select(options=unique_firstname, name='Select Full Name')
 
-        unique_dates = pd.to_datetime(df['date_expenses']).dt.to_period('M').astype(str).unique().tolist()
+        unique_dates = pd.to_datetime(df['Date_Expenses']).dt.to_period('M').astype(str).unique().tolist()
         select_start_date = pn.widgets.Select(options=unique_dates, name='Select Start Date')
         select_end_date = pn.widgets.Select(options=unique_dates, name='Select End Date')
 
@@ -53,10 +54,10 @@ class tabulator():
             end_year = end_date.year
 
             filtered_df = df[(df['FullName'] == selected_firstname) & 
-                            ((pd.to_datetime(df['date_expenses']).dt.month >= start_month) & 
-                            (pd.to_datetime(df['date_expenses']).dt.year >= start_year) & 
-                            (pd.to_datetime(df['date_expenses']).dt.month <= end_month) & 
-                            (pd.to_datetime(df['date_expenses']).dt.year <= end_year))]
+                            ((pd.to_datetime(df['Date_Expenses']).dt.month >= start_month) & 
+                            (pd.to_datetime(df['Date_Expenses']).dt.year >= start_year) & 
+                            (pd.to_datetime(df['Date_Expenses']).dt.month <= end_month) & 
+                            (pd.to_datetime(df['Date_Expenses']).dt.year <= end_year))]
 
             tabulator.value = filtered_df
             if filtered_df.empty:
@@ -64,9 +65,9 @@ class tabulator():
                 total_expenses = 0.0
                 total_overerall = 0.0
             else:
-                total_income = filtered_df['income'].sum()
-                total_expenses = filtered_df['expenses'].sum()
-                total_overerall = filtered_df['income'].sum() - filtered_df['expenses'].sum()
+                total_income = filtered_df['Income'].sum()
+                total_expenses = filtered_df['Expenses'].sum()
+                total_overerall = filtered_df['Income'].sum() - filtered_df['Expenses'].sum()
             sum_html.object = f"""<table>
                                 <tr>
                                     <th>Общо Приходи</th>

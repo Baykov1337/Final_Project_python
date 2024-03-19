@@ -1,6 +1,6 @@
 
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime, Date, text
-from sqlalchemy.orm import sessionmaker, relationship, declarative_base
+from sqlalchemy.orm import sessionmaker, relationship, declarative_base, aliased
 from datetime import datetime
 from create_veiw import Create_VIEW
 DATABASE_URL = 'sqlite:///finance.db'
@@ -54,12 +54,12 @@ class Views(Base):
     
     id = Column(Integer, primary_key=True)
     FullName = Column(String, default="")
-    description_expenses = Column(String, default="")
-    expenses = Column(String, default="")
-    source_expenses = Column(String, default="")
-    date_expenses = Column(DateTime, default=datetime.now)
-    description_income = Column(String, default="")
-    income = Column(String, default="")
-    source_income = Column(String, default="")
-    date_income = Column(String, default="")
+    Description_Expenses = Column(String, default="")
+    Expenses = Column(String, default="")
+    Source_Expenses = Column(String, default="")
+    Date_Expenses = Column(DateTime, default=datetime.now)
+    Description_Income = Column(String, default="")
+    Income = Column(String, default="")
+    Source_Income = Column(String, default="")
+    Date_Income = Column(String, default="")
 
